@@ -1,6 +1,6 @@
 # Topic Author Badge
 
-Current version: `v0.1.0`
+Current version: `v0.1.1`
 
 Author: Longlan
 
@@ -63,6 +63,16 @@ Install as a theme component from the Discourse admin UI using this repository U
 ```text
 https://github.com/longlannet/discourse-topic-author-badge
 ```
+
+## Changelog
+
+### v0.1.1
+
+- Fix desktop `below-user-names` location to match the original component placement.
+
+### v0.1.0
+
+- Initial release.
 
 ## License
 

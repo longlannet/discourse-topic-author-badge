@@ -58,9 +58,12 @@
 }
 
 @mixin topic-author-badge-below-user-names($label) {
-  > .row > .topic-body .topic-meta-data::after {
+  > .row > .topic-body .regular.contents::before {
     @include topic-author-badge-base($label);
-    margin-top: 0.25em;
+    position: relative;
+    top: -4px;
+    margin-left: var(--topic-body-width-padding);
+    margin-right: var(--topic-body-width-padding);
   }
 }
 
