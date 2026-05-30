@@ -120,9 +120,10 @@
 }
 
 @mixin topic-author-badge-mobile-below-user-names($label) {
-  > .row > .topic-body .topic-meta-data .names .first::after {
+  > .row > .topic-body .topic-meta-data .names::after {
     @include topic-author-badge-base($label);
-    display: flex;
+    order: 2;
+    flex: 0 0 100%;
     width: fit-content;
     margin-top: 0.2em;
     margin-bottom: 0.1em;
@@ -153,18 +154,17 @@
 }
 
 @mixin topic-author-badge-above-user($label) {
-  > .row {
+  > .row > .topic-body .topic-meta-data {
+    flex-wrap: wrap;
+
     &::before {
       @include topic-author-badge-base($label);
-      position: absolute;
-      top: -1px;
-      left: 50px;
+      order: -1;
+      flex: 0 0 100%;
+      width: fit-content;
+      margin-bottom: 0.25em;
       border-radius: 0 0 var(--topic-author-badge-radius) var(--topic-author-badge-radius);
       font-size: var(--font-down-2);
-    }
-
-    > .topic-body {
-      margin-top: 0.25em;
     }
   }
 }

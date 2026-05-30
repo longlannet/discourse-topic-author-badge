@@ -1,6 +1,6 @@
 # Topic Author Badge
 
-Current version: `v0.1.14`
+Current version: `v0.1.15`
 
 Author: Longlan
 
@@ -83,6 +83,12 @@ https://github.com/longlannet/discourse-topic-author-badge
 ```
 
 ## Changelog
+
+### v0.1.15
+
+- Refine mobile username-area placements for current Discourse mobile DOM:
+  - `above-user` now uses `.topic-meta-data::before` with flex wrapping.
+  - `below-user-names` now uses `.names::after` with flex order, avoiding `.first::after` inline/ellipsis issues.
 
 ### v0.1.14
 
