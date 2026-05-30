@@ -39,10 +39,11 @@ topic_author_badge_location_mobile:
   choices:
     - after-user-names
     - above-user
+    - above-avatar
     - below-user-avatar
   description:
-    en: "Badge position on mobile."
-    zh_CN: "移动端标签位置。"
+    en: "Badge position on mobile. above-user places it above the username area; above-avatar keeps the original component's avatar-top placement."
+    zh_CN: "移动端标签位置。above-user 显示在用户名区域上方；above-avatar 保留原作者组件的头像上方位置。"
 topic_author_badge_style_preset:
   type: enum
   default: "original"

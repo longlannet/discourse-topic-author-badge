@@ -148,6 +148,23 @@
       @include topic-author-badge-base($label);
       position: absolute;
       top: -1px;
+      left: 50px;
+      border-radius: 0 0 var(--topic-author-badge-radius) var(--topic-author-badge-radius);
+      font-size: var(--font-down-2);
+    }
+
+    > .topic-body {
+      margin-top: 0.25em;
+    }
+  }
+}
+
+@mixin topic-author-badge-above-avatar($label) {
+  > .row {
+    &::before {
+      @include topic-author-badge-base($label);
+      position: absolute;
+      top: -1px;
       border-radius: 0 0 var(--topic-author-badge-radius) var(--topic-author-badge-radius);
       font-size: var(--font-down-2);
     }
@@ -171,6 +188,8 @@
 @mixin topic-author-badge-apply-mobile($label) {
   @if $topic_author_badge_location_mobile == "below-user-avatar" {
     @include topic-author-badge-mobile-below-user-avatar($label);
+  } @else if $topic_author_badge_location_mobile == "above-avatar" {
+    @include topic-author-badge-above-avatar($label);
   } @else if $topic_author_badge_location_mobile == "above-user" {
     @include topic-author-badge-above-user($label);
   } @else {
@@ -190,7 +209,7 @@
       @include topic-author-badge-apply-mobile($mobile-label);
     }
 
-    @if $topic_author_badge_location_mobile == "above-user" {
+    @if $topic_author_badge_location_mobile == "above-user" or $topic_author_badge_location_mobile == "above-avatar" {
       html.mobile-view .time-gap + #{$post-selector} > #{$article-selector} {
         border-top: 1px solid var(--primary-low);
       }
@@ -212,7 +231,7 @@
       @include topic-author-badge-apply-mobile($mobile-label);
     }
 
-    @if $topic_author_badge_location_mobile == "above-user" {
+    @if $topic_author_badge_location_mobile == "above-user" or $topic_author_badge_location_mobile == "above-avatar" {
       html.mobile-view body[class*="category-#{$category-slug}"] .time-gap + #{$post-selector} > #{$article-selector},
       html.mobile-view body.archetype-regular.category-#{$category-slug} .time-gap + #{$post-selector} > #{$article-selector} {
         border-top: 1px solid var(--primary-low);
