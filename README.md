@@ -1,6 +1,6 @@
 # Topic Author Badge
 
-Current version: `v0.1.7`
+Current version: `v0.1.8`
 
 Author: Longlan
 
@@ -81,6 +81,10 @@ https://github.com/longlannet/discourse-topic-author-badge
 ```
 
 ## Changelog
+
+### v0.1.8
+
+- Fix desktop/mobile enable switches when Discourse provides boolean settings to SCSS as string values.
 
 ### v0.1.7
 
