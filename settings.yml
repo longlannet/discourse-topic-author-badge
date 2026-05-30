@@ -15,7 +15,7 @@ topic_author_badge_show_on_first_post:
     zh_CN: "是否也在首帖显示标签。默认关闭，因为首帖本身已经是话题作者的帖子。"
 topic_author_badge_location_desktop:
   type: enum
-  default: "after-user-names"
+  default: "below-user-avatar"
   choices:
     - after-user-names
     - below-user-names
@@ -25,7 +25,7 @@ topic_author_badge_location_desktop:
     zh_CN: "桌面端标签位置。"
 topic_author_badge_location_mobile:
   type: enum
-  default: "after-user-names"
+  default: "below-user-avatar"
   choices:
     - after-user-names
     - above-user
@@ -34,22 +34,22 @@ topic_author_badge_location_mobile:
     en: "Badge position on mobile."
     zh_CN: "移动端标签位置。"
 topic_author_badge_background:
-  default: "var(--tertiary-low)"
+  default: "var(--primary-high-or-secondary-low)"
   description:
     en: "Badge background color."
     zh_CN: "标签背景色。"
 topic_author_badge_text_color:
-  default: "var(--tertiary)"
+  default: "var(--secondary)"
   description:
     en: "Badge text color."
     zh_CN: "标签文字颜色。"
 topic_author_badge_border_color:
-  default: "var(--tertiary-medium)"
+  default: "transparent"
   description:
     en: "Badge border color."
     zh_CN: "标签边框颜色。"
 topic_author_badge_border_radius:
-  default: "999px"
+  default: "8px"
   description:
     en: "Badge border radius."
     zh_CN: "标签圆角。"

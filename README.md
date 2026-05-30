@@ -1,6 +1,6 @@
 # Topic Author Badge
 
-Current version: `v0.1.2`
+Current version: `v0.1.3`
 
 Author: Longlan
 
@@ -12,6 +12,7 @@ This component is inspired by [`VaperinaDEV/author-badge-for-topic-posts`](https
 
 - Adds a badge to topic author's later posts
 - Default label: `楼主`
+- Default desktop/mobile position: below user avatar
 - Separate desktop/mobile labels
 - Optional display on the first post
 - Desktop locations:
@@ -65,6 +66,11 @@ https://github.com/longlannet/discourse-topic-author-badge
 ```
 
 ## Changelog
+
+### v0.1.3
+
+- Align selectors, mobile behavior, default placement, and default badge styling with the original component.
+- Keep this fork's Chinese-friendly labels and optional first-post setting.
 
 ### v0.1.2
 
