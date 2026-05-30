@@ -110,17 +110,12 @@
 }
 
 @mixin topic-author-badge-below-user-names($label) {
-  > .row > .topic-body .topic-meta-data {
+  > .row > .topic-body .topic-meta-data .names {
     flex-wrap: wrap;
 
     &::after {
       @include topic-author-badge-base($label);
-      order: 2;
-      flex: 0 1 auto;
-      clear: none;
-      visibility: visible;
-      height: auto;
-      font-size: var(--font-down-1);
+      flex: 0 0 100%;
       width: fit-content;
       margin-top: 0.15em;
       margin-left: 0;

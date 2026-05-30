@@ -1,6 +1,6 @@
 # Topic Author Badge
 
-Current version: `v0.1.20`
+Current version: `v0.1.21`
 
 Author: Longlan
 
@@ -81,6 +81,10 @@ https://github.com/longlannet/discourse-topic-author-badge
 ```
 
 ## Changelog
+
+### v0.1.21
+
+- Fix desktop `below-user-names` appearing after the date by moving it from `.topic-meta-data::after` to `.topic-meta-data .names::after`.
 
 ### v0.1.20
 
