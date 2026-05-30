@@ -1,6 +1,6 @@
 # Topic Author Badge
 
-Current version: `v0.1.21`
+Current version: `v0.1.22`
 
 Author: Longlan
 
@@ -81,6 +81,10 @@ https://github.com/longlannet/discourse-topic-author-badge
 ```
 
 ## Changelog
+
+### v0.1.22
+
+- Restore desktop `below-user-names` to the original `.regular.contents::before` placement for stable visibility and positioning.
 
 ### v0.1.21
 
