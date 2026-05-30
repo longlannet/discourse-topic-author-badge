@@ -1,6 +1,6 @@
 # Topic Author Badge
 
-Current version: `v0.1.1`
+Current version: `v0.1.2`
 
 Author: Longlan
 
@@ -65,6 +65,10 @@ https://github.com/longlannet/discourse-topic-author-badge
 ```
 
 ## Changelog
+
+### v0.1.2
+
+- Fix first-post exclusion when `topic_author_badge_show_on_first_post` is disabled.
 
 ### v0.1.1
 

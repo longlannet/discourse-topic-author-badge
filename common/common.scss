@@ -129,11 +129,11 @@
       @include topic-author-badge-apply-mobile($mobile-label);
     }
   } @else {
-    html.desktop-view .topic-post.topic-owner > article:not(#post_1) {
+    html.desktop-view .topic-post.topic-owner:not([data-post-number="1"]) > article:not(#post_1) {
       @include topic-author-badge-apply-desktop($desktop-label);
     }
 
-    html.mobile-view .topic-post.topic-owner > article:not(#post_1) {
+    html.mobile-view .topic-post.topic-owner:not([data-post-number="1"]) > article:not(#post_1) {
       @include topic-author-badge-apply-mobile($mobile-label);
     }
   }
@@ -149,11 +149,11 @@
       @include topic-author-badge-apply-mobile($mobile-label);
     }
   } @else {
-    html.desktop-view body.category-#{$category-slug} .topic-post.topic-owner > article:not(#post_1) {
+    html.desktop-view body.category-#{$category-slug} .topic-post.topic-owner:not([data-post-number="1"]) > article:not(#post_1) {
       @include topic-author-badge-apply-desktop($desktop-label);
     }
 
-    html.mobile-view body.category-#{$category-slug} .topic-post.topic-owner > article:not(#post_1) {
+    html.mobile-view body.category-#{$category-slug} .topic-post.topic-owner:not([data-post-number="1"]) > article:not(#post_1) {
       @include topic-author-badge-apply-mobile($mobile-label);
     }
   }
