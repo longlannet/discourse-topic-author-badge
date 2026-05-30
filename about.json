@@ -3,6 +3,6 @@
   "about_url": "https://github.com/longlannet/discourse-topic-author-badge",
   "license_url": "https://github.com/longlannet/discourse-topic-author-badge/blob/main/LICENSE",
   "authors": "Longlan",
-  "theme_version": "v0.1.13",
+  "theme_version": "v0.1.14",
   "component": true
 }

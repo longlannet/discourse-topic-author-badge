@@ -119,6 +119,16 @@
   }
 }
 
+@mixin topic-author-badge-mobile-below-user-names($label) {
+  > .row > .topic-body .topic-meta-data .names .first::after {
+    @include topic-author-badge-base($label);
+    display: flex;
+    width: fit-content;
+    margin-top: 0.2em;
+    margin-bottom: 0.1em;
+  }
+}
+
 @mixin topic-author-badge-below-user-avatar($label) {
   > .row > .topic-avatar::after {
     @include topic-author-badge-base($label);
@@ -188,6 +198,8 @@
 @mixin topic-author-badge-apply-mobile($label) {
   @if $topic_author_badge_location_mobile == "below-user-avatar" {
     @include topic-author-badge-mobile-below-user-avatar($label);
+  } @else if $topic_author_badge_location_mobile == "below-user-names" {
+    @include topic-author-badge-mobile-below-user-names($label);
   } @else if $topic_author_badge_location_mobile == "above-avatar" {
     @include topic-author-badge-above-avatar($label);
   } @else if $topic_author_badge_location_mobile == "above-user" {

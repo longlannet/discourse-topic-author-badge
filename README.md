@@ -1,6 +1,6 @@
 # Topic Author Badge
 
-Current version: `v0.1.13`
+Current version: `v0.1.14`
 
 Author: Longlan
 
@@ -23,6 +23,7 @@ This component is inspired by [`VaperinaDEV/author-badge-for-topic-posts`](https
   - below user avatar
 - Mobile locations:
   - after user names
+  - below user names
   - above user
   - above avatar
   - below user avatar
@@ -82,6 +83,10 @@ https://github.com/longlannet/discourse-topic-author-badge
 ```
 
 ## Changelog
+
+### v0.1.14
+
+- Add mobile `below-user-names` location using `.topic-meta-data .names .first::after`, placing the badge directly below the first username line.
 
 ### v0.1.13
 
