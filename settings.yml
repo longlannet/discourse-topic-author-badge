@@ -1,13 +1,3 @@
-topic_author_badge_label_desktop:
-  default: "楼主"
-  description:
-    en: "Label shown on desktop for the topic author's posts."
-    zh_CN: "桌面端显示在话题作者帖子上的标签文字。"
-topic_author_badge_label_mobile:
-  default: "楼主"
-  description:
-    en: "Label shown on mobile for the topic author's posts."
-    zh_CN: "移动端显示在话题作者帖子上的标签文字。"
 topic_author_badge_enable_desktop:
   default: true
   description:
@@ -18,6 +8,16 @@ topic_author_badge_enable_mobile:
   description:
     en: "Show the topic author badge on mobile."
     zh_CN: "是否在移动端显示话题作者标签。"
+topic_author_badge_label_desktop:
+  default: "楼主"
+  description:
+    en: "Label shown on desktop for the topic author's posts."
+    zh_CN: "桌面端显示在话题作者帖子上的标签文字。"
+topic_author_badge_label_mobile:
+  default: "楼主"
+  description:
+    en: "Label shown on mobile for the topic author's posts."
+    zh_CN: "移动端显示在话题作者帖子上的标签文字。"
 topic_author_badge_show_on_first_post:
   default: false
   description:

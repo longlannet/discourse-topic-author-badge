@@ -1,6 +1,6 @@
 # Topic Author Badge
 
-Current version: `v0.1.6`
+Current version: `v0.1.7`
 
 Author: Longlan
 
@@ -81,6 +81,10 @@ https://github.com/longlannet/discourse-topic-author-badge
 ```
 
 ## Changelog
+
+### v0.1.7
+
+- Move desktop/mobile enable switches to the top of the settings list for easier access.
 
 ### v0.1.6
 
