@@ -1,6 +1,6 @@
 # Topic Author Badge
 
-Current version: `v0.1.5`
+Current version: `v0.1.6`
 
 Author: Longlan
 
@@ -15,6 +15,7 @@ This component is inspired by [`VaperinaDEV/author-badge-for-topic-posts`](https
 - Default desktop/mobile position: below user avatar
 - Selectable style preset: original, capsule, subtle, solid, or custom
 - Separate desktop/mobile labels
+- Separate desktop/mobile enable switches
 - Optional display on the first post
 - Desktop locations:
   - after user names
@@ -31,6 +32,8 @@ This component is inspired by [`VaperinaDEV/author-badge-for-topic-posts`](https
 
 - `topic_author_badge_label_desktop`
 - `topic_author_badge_label_mobile`
+- `topic_author_badge_enable_desktop`
+- `topic_author_badge_enable_mobile`
 - `topic_author_badge_show_on_first_post`
 - `topic_author_badge_location_desktop`
 - `topic_author_badge_location_mobile`
@@ -78,6 +81,10 @@ https://github.com/longlannet/discourse-topic-author-badge
 ```
 
 ## Changelog
+
+### v0.1.6
+
+- Add separate desktop/mobile enable switches.
 
 ### v0.1.5
 

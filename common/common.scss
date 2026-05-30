@@ -177,36 +177,44 @@
 }
 
 @mixin topic-author-badge-post-selectors($post-selector, $article-selector, $desktop-label, $mobile-label) {
-  html.desktop-view #{$post-selector} > #{$article-selector} {
-    @include topic-author-badge-apply-desktop($desktop-label);
+  @if $topic_author_badge_enable_desktop {
+    html.desktop-view #{$post-selector} > #{$article-selector} {
+      @include topic-author-badge-apply-desktop($desktop-label);
+    }
   }
 
-  html.mobile-view #{$post-selector} > #{$article-selector} {
-    @include topic-author-badge-apply-mobile($mobile-label);
-  }
+  @if $topic_author_badge_enable_mobile {
+    html.mobile-view #{$post-selector} > #{$article-selector} {
+      @include topic-author-badge-apply-mobile($mobile-label);
+    }
 
-  @if $topic_author_badge_location_mobile == "above-user" {
-    html.mobile-view .time-gap + #{$post-selector} > #{$article-selector} {
-      border-top: 1px solid var(--primary-low);
+    @if $topic_author_badge_location_mobile == "above-user" {
+      html.mobile-view .time-gap + #{$post-selector} > #{$article-selector} {
+        border-top: 1px solid var(--primary-low);
+      }
     }
   }
 }
 
 @mixin topic-author-badge-category-selectors($category-slug, $post-selector, $article-selector, $desktop-label, $mobile-label) {
-  html.desktop-view body[class*="category-#{$category-slug}"] #{$post-selector} > #{$article-selector},
-  html.desktop-view body.archetype-regular.category-#{$category-slug} #{$post-selector} > #{$article-selector} {
-    @include topic-author-badge-apply-desktop($desktop-label);
+  @if $topic_author_badge_enable_desktop {
+    html.desktop-view body[class*="category-#{$category-slug}"] #{$post-selector} > #{$article-selector},
+    html.desktop-view body.archetype-regular.category-#{$category-slug} #{$post-selector} > #{$article-selector} {
+      @include topic-author-badge-apply-desktop($desktop-label);
+    }
   }
 
-  html.mobile-view body[class*="category-#{$category-slug}"] #{$post-selector} > #{$article-selector},
-  html.mobile-view body.archetype-regular.category-#{$category-slug} #{$post-selector} > #{$article-selector} {
-    @include topic-author-badge-apply-mobile($mobile-label);
-  }
+  @if $topic_author_badge_enable_mobile {
+    html.mobile-view body[class*="category-#{$category-slug}"] #{$post-selector} > #{$article-selector},
+    html.mobile-view body.archetype-regular.category-#{$category-slug} #{$post-selector} > #{$article-selector} {
+      @include topic-author-badge-apply-mobile($mobile-label);
+    }
 
-  @if $topic_author_badge_location_mobile == "above-user" {
-    html.mobile-view body[class*="category-#{$category-slug}"] .time-gap + #{$post-selector} > #{$article-selector},
-    html.mobile-view body.archetype-regular.category-#{$category-slug} .time-gap + #{$post-selector} > #{$article-selector} {
-      border-top: 1px solid var(--primary-low);
+    @if $topic_author_badge_location_mobile == "above-user" {
+      html.mobile-view body[class*="category-#{$category-slug}"] .time-gap + #{$post-selector} > #{$article-selector},
+      html.mobile-view body.archetype-regular.category-#{$category-slug} .time-gap + #{$post-selector} > #{$article-selector} {
+        border-top: 1px solid var(--primary-low);
+      }
     }
   }
 }
