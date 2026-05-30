@@ -1,6 +1,6 @@
 # Topic Author Badge
 
-Current version: `v0.1.16`
+Current version: `v0.1.17`
 
 Author: Longlan
 
@@ -81,6 +81,10 @@ https://github.com/longlannet/discourse-topic-author-badge
 ```
 
 ## Changelog
+
+### v0.1.17
+
+- Fix mobile `below-user-names` badge becoming full-width by anchoring it to `.names .first::after` instead of `.topic-meta-data::after`.
 
 ### v0.1.16
 
