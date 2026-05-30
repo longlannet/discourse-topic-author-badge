@@ -1,6 +1,6 @@
 # Topic Author Badge
 
-Current version: `v0.1.9`
+Current version: `v0.1.10`
 
 Author: Longlan
 
@@ -81,6 +81,10 @@ https://github.com/longlannet/discourse-topic-author-badge
 ```
 
 ## Changelog
+
+### v0.1.10
+
+- Refine text centering: keep flex alignment but remove fixed min-height so different positions and font sizes render consistently.
 
 ### v0.1.9
 
