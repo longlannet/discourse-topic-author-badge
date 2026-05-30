@@ -1,6 +1,6 @@
 # Topic Author Badge
 
-Current version: `v0.1.10`
+Current version: `v0.1.11`
 
 Author: Longlan
 
@@ -81,6 +81,10 @@ https://github.com/longlannet/discourse-topic-author-badge
 ```
 
 ## Changelog
+
+### v0.1.11
+
+- Fix mobile `above-user` placement by attaching the badge to `.topic-body::before` instead of `.row::before`, preventing it from appearing above the avatar.
 
 ### v0.1.10
 
