@@ -120,12 +120,24 @@
 }
 
 @mixin topic-author-badge-mobile-below-user-names($label) {
-  > .row > .topic-body .topic-meta-data .names .first::after {
-    @include topic-author-badge-base($label);
-    display: flex;
-    width: fit-content;
-    margin-top: 0.2em;
-    margin-bottom: 0.1em;
+  > .row > .topic-body .topic-meta-data {
+    flex-wrap: wrap;
+
+    &::before {
+      content: "";
+      order: 2;
+      flex: 0 0 100%;
+      width: 0;
+      height: 0;
+    }
+
+    &::after {
+      @include topic-author-badge-base($label);
+      order: 3;
+      flex: 0 1 auto;
+      width: fit-content;
+      margin-top: 0.25em;
+    }
   }
 }
 

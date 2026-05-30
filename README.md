@@ -1,6 +1,6 @@
 # Topic Author Badge
 
-Current version: `v0.1.17`
+Current version: `v0.1.18`
 
 Author: Longlan
 
@@ -81,6 +81,10 @@ https://github.com/longlannet/discourse-topic-author-badge
 ```
 
 ## Changelog
+
+### v0.1.18
+
+- Fix mobile `below-user-names` placement by returning to `.topic-meta-data::after` while preventing full-width stretching with a separate flex line-break pseudo-element.
 
 ### v0.1.17
 
