@@ -1,8 +1,20 @@
 :root {
-  --topic-author-badge-bg: #{$topic_author_badge_background};
-  --topic-author-badge-color: #{$topic_author_badge_text_color};
-  --topic-author-badge-border-color: #{$topic_author_badge_border_color};
-  --topic-author-badge-radius: #{$topic_author_badge_border_radius};
+  @if $topic_author_badge_style_preset == "capsule" {
+    --topic-author-badge-bg: var(--tertiary-low);
+    --topic-author-badge-color: var(--tertiary);
+    --topic-author-badge-border-color: var(--tertiary-medium);
+    --topic-author-badge-radius: 999px;
+  } @else if $topic_author_badge_style_preset == "custom" {
+    --topic-author-badge-bg: #{$topic_author_badge_background};
+    --topic-author-badge-color: #{$topic_author_badge_text_color};
+    --topic-author-badge-border-color: #{$topic_author_badge_border_color};
+    --topic-author-badge-radius: #{$topic_author_badge_border_radius};
+  } @else {
+    --topic-author-badge-bg: var(--primary-high-or-secondary-low);
+    --topic-author-badge-color: var(--secondary);
+    --topic-author-badge-border-color: transparent;
+    --topic-author-badge-radius: 8px;
+  }
 }
 
 @function topic-author-badge-split($value, $separator) {
@@ -29,6 +41,18 @@
   line-height: var(--line-height-large);
   padding: 0 0.5em;
   white-space: nowrap;
+
+  @if $topic_author_badge_style_preset == "capsule" {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 0.08em 0.55em;
+    font-size: var(--font-down-2);
+    line-height: var(--line-height-medium);
+  }
 
   @if $topic_author_badge_font_style == "bold" {
     font-weight: 600;

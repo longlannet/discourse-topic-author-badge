@@ -33,6 +33,16 @@ topic_author_badge_location_mobile:
   description:
     en: "Badge position on mobile."
     zh_CN: "移动端标签位置。"
+topic_author_badge_style_preset:
+  type: enum
+  default: "original"
+  choices:
+    - original
+    - capsule
+    - custom
+  description:
+    en: "Badge style preset. original matches the upstream component, capsule uses the rounded style from this fork, custom uses the color/radius settings below."
+    zh_CN: "标签外观预设。original 使用原作者外观，capsule 使用本组件的圆角胶囊外观，custom 使用下方颜色/圆角设置。"
 topic_author_badge_background:
   default: "var(--primary-high-or-secondary-low)"
   description:

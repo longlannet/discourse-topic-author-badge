@@ -1,6 +1,6 @@
 # Topic Author Badge
 
-Current version: `v0.1.3`
+Current version: `v0.1.4`
 
 Author: Longlan
 
@@ -13,6 +13,7 @@ This component is inspired by [`VaperinaDEV/author-badge-for-topic-posts`](https
 - Adds a badge to topic author's later posts
 - Default label: `楼主`
 - Default desktop/mobile position: below user avatar
+- Selectable style preset: original, capsule, or custom
 - Separate desktop/mobile labels
 - Optional display on the first post
 - Desktop locations:
@@ -33,12 +34,21 @@ This component is inspired by [`VaperinaDEV/author-badge-for-topic-posts`](https
 - `topic_author_badge_show_on_first_post`
 - `topic_author_badge_location_desktop`
 - `topic_author_badge_location_mobile`
+- `topic_author_badge_style_preset`
 - `topic_author_badge_background`
 - `topic_author_badge_text_color`
 - `topic_author_badge_border_color`
 - `topic_author_badge_border_radius`
 - `topic_author_badge_font_style`
 - `topic_author_badge_category_overrides`
+
+### Style preset
+
+`topic_author_badge_style_preset` controls the default appearance:
+
+- `original`: upstream/original component look. This is the default.
+- `capsule`: rounded pill badge style from this fork's early versions.
+- `custom`: use the color and radius settings below the preset field.
 
 ### Category overrides
 
@@ -66,6 +76,10 @@ https://github.com/longlannet/discourse-topic-author-badge
 ```
 
 ## Changelog
+
+### v0.1.4
+
+- Add `topic_author_badge_style_preset` so admins can choose the original look, capsule look, or custom colors/radius.
 
 ### v0.1.3
 
