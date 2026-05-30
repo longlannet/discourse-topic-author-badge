@@ -1,6 +1,6 @@
 # Topic Author Badge
 
-Current version: `v0.1.11`
+Current version: `v0.1.12`
 
 Author: Longlan
 
@@ -81,6 +81,10 @@ https://github.com/longlannet/discourse-topic-author-badge
 ```
 
 ## Changelog
+
+### v0.1.12
+
+- Restore mobile `above-user` placement to match the original component: `.row::before` with absolute positioning.
 
 ### v0.1.11
 

@@ -143,16 +143,17 @@
 }
 
 @mixin topic-author-badge-above-user($label) {
-  > .row > .topic-body {
-    margin-top: 0.25em;
-
+  > .row {
     &::before {
       @include topic-author-badge-base($label);
-      display: flex;
-      width: fit-content;
-      margin-bottom: 0.25em;
+      position: absolute;
+      top: -1px;
       border-radius: 0 0 var(--topic-author-badge-radius) var(--topic-author-badge-radius);
       font-size: var(--font-down-2);
+    }
+
+    > .topic-body {
+      margin-top: 0.25em;
     }
   }
 }
