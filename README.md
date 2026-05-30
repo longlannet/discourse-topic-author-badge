@@ -1,6 +1,6 @@
 # Topic Author Badge
 
-Current version: `v0.1.8`
+Current version: `v0.1.9`
 
 Author: Longlan
 
@@ -81,6 +81,10 @@ https://github.com/longlannet/discourse-topic-author-badge
 ```
 
 ## Changelog
+
+### v0.1.9
+
+- Improve badge text centering by using a flex-centered base badge with stable min-height.
 
 ### v0.1.8
 

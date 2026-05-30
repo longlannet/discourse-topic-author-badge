@@ -47,25 +47,27 @@
 
 @mixin topic-author-badge-base($label) {
   content: $label;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  max-width: 100%;
+  box-sizing: border-box;
   border: 1px solid var(--topic-author-badge-border-color);
   border-radius: var(--topic-author-badge-radius);
   background: var(--topic-author-badge-bg);
   color: var(--topic-author-badge-color);
   font-size: var(--font-down-1);
-  line-height: var(--line-height-large);
+  line-height: 1;
+  min-height: calc(var(--font-down-1) * 1.55);
   padding: 0 0.5em;
   white-space: nowrap;
+  vertical-align: middle;
 
   @if $topic_author_badge_style_preset == "capsule" {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: fit-content;
-    max-width: 100%;
-    box-sizing: border-box;
     padding: 0.08em 0.55em;
     font-size: var(--font-down-2);
-    line-height: var(--line-height-medium);
+    min-height: calc(var(--font-down-2) * 1.55);
   }
 
   @if $topic_author_badge_font_style == "bold" {
@@ -121,9 +123,6 @@
 @mixin topic-author-badge-below-user-avatar($label) {
   > .row > .topic-avatar::after {
     @include topic-author-badge-base($label);
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: calc(var(--topic-avatar-width) + 3px);
     box-sizing: border-box;
     margin-top: 0.5em;
