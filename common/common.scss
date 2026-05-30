@@ -4,6 +4,16 @@
     --topic-author-badge-color: var(--tertiary);
     --topic-author-badge-border-color: var(--tertiary-medium);
     --topic-author-badge-radius: 999px;
+  } @else if $topic_author_badge_style_preset == "subtle" {
+    --topic-author-badge-bg: var(--primary-very-low);
+    --topic-author-badge-color: var(--primary-medium);
+    --topic-author-badge-border-color: var(--primary-low);
+    --topic-author-badge-radius: 6px;
+  } @else if $topic_author_badge_style_preset == "solid" {
+    --topic-author-badge-bg: var(--tertiary);
+    --topic-author-badge-color: var(--secondary);
+    --topic-author-badge-border-color: var(--tertiary);
+    --topic-author-badge-radius: 6px;
   } @else if $topic_author_badge_style_preset == "custom" {
     --topic-author-badge-bg: #{$topic_author_badge_background};
     --topic-author-badge-color: #{$topic_author_badge_text_color};

@@ -39,10 +39,12 @@ topic_author_badge_style_preset:
   choices:
     - original
     - capsule
+    - subtle
+    - solid
     - custom
   description:
-    en: "Badge style preset. original matches the upstream component, capsule uses the rounded style from this fork, custom uses the color/radius settings below."
-    zh_CN: "标签外观预设。original 使用原作者外观，capsule 使用本组件的圆角胶囊外观，custom 使用下方颜色/圆角设置。"
+    en: "Badge style preset. original matches the upstream component, capsule uses the rounded style from this fork, subtle is a quiet light badge, solid is a stronger filled badge, custom uses the color/radius settings below."
+    zh_CN: "标签外观预设。original 使用原作者外观，capsule 使用圆角胶囊外观，subtle 是低调浅色标签，solid 是醒目实心标签，custom 使用下方颜色/圆角设置。"
 topic_author_badge_background:
   default: "var(--primary-high-or-secondary-low)"
   description:
