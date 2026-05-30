@@ -110,12 +110,17 @@
 }
 
 @mixin topic-author-badge-below-user-names($label) {
-  > .row > .topic-body .regular.contents::before {
-    @include topic-author-badge-base($label);
-    position: relative;
-    top: -4px;
-    margin-left: var(--topic-body-width-padding);
-    margin-right: var(--topic-body-width-padding);
+  > .row > .topic-body .topic-meta-data {
+    flex-wrap: wrap;
+
+    &::after {
+      @include topic-author-badge-base($label);
+      order: 2;
+      flex: 0 1 auto;
+      width: fit-content;
+      margin-top: 0.15em;
+      margin-left: 0;
+    }
   }
 }
 

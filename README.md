@@ -1,6 +1,6 @@
 # Topic Author Badge
 
-Current version: `v0.1.18`
+Current version: `v0.1.19`
 
 Author: Longlan
 
@@ -81,6 +81,10 @@ https://github.com/longlannet/discourse-topic-author-badge
 ```
 
 ## Changelog
+
+### v0.1.19
+
+- Move desktop `below-user-names` from `.regular.contents::before` into `.topic-meta-data::after`, so the badge belongs to the author metadata area instead of pushing the post body content down.
 
 ### v0.1.18
 
