@@ -1,6 +1,6 @@
 # Topic Author Badge
 
-Current version: `v0.1.15`
+Current version: `v0.1.16`
 
 Author: Longlan
 
@@ -24,8 +24,6 @@ This component is inspired by [`VaperinaDEV/author-badge-for-topic-posts`](https
 - Mobile locations:
   - after user names
   - below user names
-  - above user
-  - above avatar
   - below user avatar
 - Custom colors, border radius, and font style
 - Optional category-specific label overrides
@@ -83,6 +81,12 @@ https://github.com/longlannet/discourse-topic-author-badge
 ```
 
 ## Changelog
+
+### v0.1.16
+
+- Simplify mobile locations to stable anchors only: `after-user-names`, `below-user-names`, and `below-user-avatar`.
+- Remove mobile `above-user` and `above-avatar` from settings because they rely on fragile positioning in the current Discourse mobile layout.
+- Move mobile `below-user-names` to `.topic-meta-data::after` for a more stable username-area placement.
 
 ### v0.1.15
 

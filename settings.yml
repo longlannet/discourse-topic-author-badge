@@ -39,12 +39,10 @@ topic_author_badge_location_mobile:
   choices:
     - after-user-names
     - below-user-names
-    - above-user
-    - above-avatar
     - below-user-avatar
   description:
-    en: "Badge position on mobile. below-user-names places it directly under the first username line; above-user places it above the username area; above-avatar keeps the original component's avatar-top placement."
-    zh_CN: "移动端标签位置。below-user-names 直接显示在第一行用户名下方；above-user 显示在用户名区域上方；above-avatar 保留原作者组件的头像上方位置。"
+    en: "Badge position on mobile. These options use stable anchors in the current Discourse mobile DOM."
+    zh_CN: "移动端标签位置。这些选项使用当前 Discourse 移动端 DOM 中较稳定的锚点。"
 topic_author_badge_style_preset:
   type: enum
   default: "original"

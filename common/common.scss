@@ -120,13 +120,16 @@
 }
 
 @mixin topic-author-badge-mobile-below-user-names($label) {
-  > .row > .topic-body .topic-meta-data .names::after {
-    @include topic-author-badge-base($label);
-    order: 2;
-    flex: 0 0 100%;
-    width: fit-content;
-    margin-top: 0.2em;
-    margin-bottom: 0.1em;
+  > .row > .topic-body .topic-meta-data {
+    flex-wrap: wrap;
+
+    &::after {
+      @include topic-author-badge-base($label);
+      order: 2;
+      flex: 0 0 100%;
+      width: fit-content;
+      margin-top: 0.25em;
+    }
   }
 }
 
@@ -153,38 +156,6 @@
   }
 }
 
-@mixin topic-author-badge-above-user($label) {
-  > .row > .topic-body .topic-meta-data {
-    flex-wrap: wrap;
-
-    &::before {
-      @include topic-author-badge-base($label);
-      order: -1;
-      flex: 0 0 100%;
-      width: fit-content;
-      margin-bottom: 0.25em;
-      border-radius: 0 0 var(--topic-author-badge-radius) var(--topic-author-badge-radius);
-      font-size: var(--font-down-2);
-    }
-  }
-}
-
-@mixin topic-author-badge-above-avatar($label) {
-  > .row {
-    &::before {
-      @include topic-author-badge-base($label);
-      position: absolute;
-      top: -1px;
-      border-radius: 0 0 var(--topic-author-badge-radius) var(--topic-author-badge-radius);
-      font-size: var(--font-down-2);
-    }
-
-    > .topic-body {
-      margin-top: 0.25em;
-    }
-  }
-}
-
 @mixin topic-author-badge-apply-desktop($label) {
   @if $topic_author_badge_location_desktop == "below-user-avatar" {
     @include topic-author-badge-below-user-avatar($label);
@@ -200,10 +171,6 @@
     @include topic-author-badge-mobile-below-user-avatar($label);
   } @else if $topic_author_badge_location_mobile == "below-user-names" {
     @include topic-author-badge-mobile-below-user-names($label);
-  } @else if $topic_author_badge_location_mobile == "above-avatar" {
-    @include topic-author-badge-above-avatar($label);
-  } @else if $topic_author_badge_location_mobile == "above-user" {
-    @include topic-author-badge-above-user($label);
   } @else {
     @include topic-author-badge-mobile-after-user-names($label);
   }
@@ -220,12 +187,6 @@
     html.mobile-view #{$post-selector} > #{$article-selector} {
       @include topic-author-badge-apply-mobile($mobile-label);
     }
-
-    @if $topic_author_badge_location_mobile == "above-user" or $topic_author_badge_location_mobile == "above-avatar" {
-      html.mobile-view .time-gap + #{$post-selector} > #{$article-selector} {
-        border-top: 1px solid var(--primary-low);
-      }
-    }
   }
 }
 
@@ -241,13 +202,6 @@
     html.mobile-view body[class*="category-#{$category-slug}"] #{$post-selector} > #{$article-selector},
     html.mobile-view body.archetype-regular.category-#{$category-slug} #{$post-selector} > #{$article-selector} {
       @include topic-author-badge-apply-mobile($mobile-label);
-    }
-
-    @if $topic_author_badge_location_mobile == "above-user" or $topic_author_badge_location_mobile == "above-avatar" {
-      html.mobile-view body[class*="category-#{$category-slug}"] .time-gap + #{$post-selector} > #{$article-selector},
-      html.mobile-view body.archetype-regular.category-#{$category-slug} .time-gap + #{$post-selector} > #{$article-selector} {
-        border-top: 1px solid var(--primary-low);
-      }
     }
   }
 }
