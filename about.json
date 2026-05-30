@@ -1,0 +1,8 @@
+{
+  "name": "Topic Author Badge",
+  "about_url": "https://github.com/longlannet/discourse-topic-author-badge",
+  "license_url": "https://github.com/longlannet/discourse-topic-author-badge/blob/main/LICENSE",
+  "authors": "Longlan",
+  "theme_version": "v0.1.0",
+  "component": true
+}

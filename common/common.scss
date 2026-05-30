@@ -1,0 +1,192 @@
+:root {
+  --topic-author-badge-bg: #{$topic_author_badge_background};
+  --topic-author-badge-color: #{$topic_author_badge_text_color};
+  --topic-author-badge-border-color: #{$topic_author_badge_border_color};
+  --topic-author-badge-radius: #{$topic_author_badge_border_radius};
+}
+
+@function topic-author-badge-split($value, $separator) {
+  $text: "#{$value}";
+  $result: ();
+  $index: str-index($text, $separator);
+
+  @while $index != null {
+    $result: append($result, str-slice($text, 1, $index - 1));
+    $text: str-slice($text, $index + str-length($separator));
+    $index: str-index($text, $separator);
+  }
+
+  @return append($result, $text);
+}
+
+@mixin topic-author-badge-base($label) {
+  content: $label;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 0.08em 0.55em;
+  border: 1px solid var(--topic-author-badge-border-color);
+  border-radius: var(--topic-author-badge-radius);
+  background: var(--topic-author-badge-bg);
+  color: var(--topic-author-badge-color);
+  font-size: var(--font-down-2);
+  line-height: var(--line-height-medium);
+  white-space: nowrap;
+
+  @if $topic_author_badge_font_style == "bold" {
+    font-weight: 600;
+  } @else if $topic_author_badge_font_style == "italic" {
+    font-style: italic;
+  } @else if $topic_author_badge_font_style == "bold-italic" {
+    font-weight: 600;
+    font-style: italic;
+  } @else {
+    font-weight: normal;
+    font-style: normal;
+  }
+}
+
+@mixin topic-author-badge-after-user-names($label) {
+  > .row > .topic-body .topic-meta-data .names::after {
+    @include topic-author-badge-base($label);
+    margin-left: 0.35em;
+    vertical-align: middle;
+  }
+}
+
+@mixin topic-author-badge-below-user-names($label) {
+  > .row > .topic-body .topic-meta-data::after {
+    @include topic-author-badge-base($label);
+    margin-top: 0.25em;
+  }
+}
+
+@mixin topic-author-badge-below-user-avatar($label) {
+  > .row > .topic-avatar::after {
+    @include topic-author-badge-base($label);
+    display: flex;
+    width: calc(var(--topic-avatar-width) + 3px);
+    margin-top: 0.4em;
+    padding-left: 0.25em;
+    padding-right: 0.25em;
+    text-align: center;
+    white-space: normal;
+    word-break: break-word;
+  }
+}
+
+@mixin topic-author-badge-above-user($label) {
+  > .row {
+    position: relative;
+
+    &::before {
+      @include topic-author-badge-base($label);
+      position: absolute;
+      top: -1px;
+      left: var(--topic-body-width-padding);
+      border-radius: 0 0 var(--topic-author-badge-radius) var(--topic-author-badge-radius);
+    }
+
+    > .topic-body {
+      margin-top: 0.35em;
+    }
+  }
+}
+
+@mixin topic-author-badge-apply-desktop($label) {
+  @if $topic_author_badge_location_desktop == "below-user-avatar" {
+    @include topic-author-badge-below-user-avatar($label);
+  } @else if $topic_author_badge_location_desktop == "below-user-names" {
+    @include topic-author-badge-below-user-names($label);
+  } @else {
+    @include topic-author-badge-after-user-names($label);
+  }
+}
+
+@mixin topic-author-badge-apply-mobile($label) {
+  @if $topic_author_badge_location_mobile == "below-user-avatar" {
+    @include topic-author-badge-below-user-avatar($label);
+  } @else if $topic_author_badge_location_mobile == "above-user" {
+    @include topic-author-badge-above-user($label);
+  } @else {
+    @include topic-author-badge-after-user-names($label);
+  }
+}
+
+@mixin topic-author-badge-base-rules($desktop-label, $mobile-label) {
+  @if $topic_author_badge_show_on_first_post {
+    html.desktop-view .topic-post.topic-owner > article {
+      @include topic-author-badge-apply-desktop($desktop-label);
+    }
+
+    html.mobile-view .topic-post.topic-owner > article {
+      @include topic-author-badge-apply-mobile($mobile-label);
+    }
+  } @else {
+    html.desktop-view .topic-post.topic-owner > article:not(#post_1) {
+      @include topic-author-badge-apply-desktop($desktop-label);
+    }
+
+    html.mobile-view .topic-post.topic-owner > article:not(#post_1) {
+      @include topic-author-badge-apply-mobile($mobile-label);
+    }
+  }
+}
+
+@mixin topic-author-badge-category-rules($category-slug, $desktop-label, $mobile-label) {
+  @if $topic_author_badge_show_on_first_post {
+    html.desktop-view body.category-#{$category-slug} .topic-post.topic-owner > article {
+      @include topic-author-badge-apply-desktop($desktop-label);
+    }
+
+    html.mobile-view body.category-#{$category-slug} .topic-post.topic-owner > article {
+      @include topic-author-badge-apply-mobile($mobile-label);
+    }
+  } @else {
+    html.desktop-view body.category-#{$category-slug} .topic-post.topic-owner > article:not(#post_1) {
+      @include topic-author-badge-apply-desktop($desktop-label);
+    }
+
+    html.mobile-view body.category-#{$category-slug} .topic-post.topic-owner > article:not(#post_1) {
+      @include topic-author-badge-apply-mobile($mobile-label);
+    }
+  }
+}
+
+// By default Discourse adds .topic-owner to posts written by the topic creator.
+// We use CSS pseudo-elements to keep the component lightweight and rebuild-free.
+@include topic-author-badge-base-rules(
+  "#{$topic_author_badge_label_desktop}",
+  "#{$topic_author_badge_label_mobile}"
+);
+
+// Optional category-specific label overrides.
+// Format per item: category-slug:desktop-label:mobile-label
+@each $raw-override in $topic_author_badge_category_overrides {
+  @if str-length("#{$raw-override}") > 0 {
+    $parts: topic-author-badge-split($raw-override, ":");
+    $category-slug: nth($parts, 1);
+    $desktop-label: $topic_author_badge_label_desktop;
+    $mobile-label: $topic_author_badge_label_mobile;
+
+    @if length($parts) >= 2 and str-length("#{nth($parts, 2)}") > 0 {
+      $desktop-label: nth($parts, 2);
+      $mobile-label: nth($parts, 2);
+    }
+
+    @if length($parts) >= 3 and str-length("#{nth($parts, 3)}") > 0 {
+      $mobile-label: nth($parts, 3);
+    }
+
+    @if str-length("#{$category-slug}") > 0 {
+      @include topic-author-badge-category-rules(
+        $category-slug,
+        "#{$desktop-label}",
+        "#{$mobile-label}"
+      );
+    }
+  }
+}

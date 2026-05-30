@@ -1,0 +1,72 @@
+topic_author_badge_label_desktop:
+  default: "楼主"
+  description:
+    en: "Label shown on desktop for the topic author's posts."
+    zh_CN: "桌面端显示在话题作者帖子上的标签文字。"
+topic_author_badge_label_mobile:
+  default: "楼主"
+  description:
+    en: "Label shown on mobile for the topic author's posts."
+    zh_CN: "移动端显示在话题作者帖子上的标签文字。"
+topic_author_badge_show_on_first_post:
+  default: false
+  description:
+    en: "Show the badge on the first post as well. Disabled by default because the first post is already visually the topic author's post."
+    zh_CN: "是否也在首帖显示标签。默认关闭，因为首帖本身已经是话题作者的帖子。"
+topic_author_badge_location_desktop:
+  type: enum
+  default: "after-user-names"
+  choices:
+    - after-user-names
+    - below-user-names
+    - below-user-avatar
+  description:
+    en: "Badge position on desktop."
+    zh_CN: "桌面端标签位置。"
+topic_author_badge_location_mobile:
+  type: enum
+  default: "after-user-names"
+  choices:
+    - after-user-names
+    - above-user
+    - below-user-avatar
+  description:
+    en: "Badge position on mobile."
+    zh_CN: "移动端标签位置。"
+topic_author_badge_background:
+  default: "var(--tertiary-low)"
+  description:
+    en: "Badge background color."
+    zh_CN: "标签背景色。"
+topic_author_badge_text_color:
+  default: "var(--tertiary)"
+  description:
+    en: "Badge text color."
+    zh_CN: "标签文字颜色。"
+topic_author_badge_border_color:
+  default: "var(--tertiary-medium)"
+  description:
+    en: "Badge border color."
+    zh_CN: "标签边框颜色。"
+topic_author_badge_border_radius:
+  default: "999px"
+  description:
+    en: "Badge border radius."
+    zh_CN: "标签圆角。"
+topic_author_badge_font_style:
+  type: enum
+  default: "normal"
+  choices:
+    - normal
+    - bold
+    - italic
+    - bold-italic
+  description:
+    en: "Badge font style."
+    zh_CN: "标签字体样式。"
+topic_author_badge_category_overrides:
+  default: ""
+  type: list
+  description:
+    en: "Optional advanced overrides. Format: category-slug:desktop-label:mobile-label. One rule per item. Example: support:Author:OP. Leave empty to use the global labels."
+    zh_CN: "可选高级分类覆盖。格式：分类-slug:桌面标签:移动标签。每项一条规则。例如：support:Author:OP。留空则使用全局标签。"
