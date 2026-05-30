@@ -1,6 +1,6 @@
 # Topic Author Badge
 
-Current version: `v0.1.19`
+Current version: `v0.1.20`
 
 Author: Longlan
 
@@ -81,6 +81,10 @@ https://github.com/longlannet/discourse-topic-author-badge
 ```
 
 ## Changelog
+
+### v0.1.20
+
+- Fix desktop `below-user-names` disappearing by overriding Discourse core `.topic-meta-data::after` clearfix properties (`visibility`, `height`, `clear`, and font size).
 
 ### v0.1.19
 
